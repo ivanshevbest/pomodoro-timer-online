@@ -1,0 +1,674 @@
+:root {
+    --primary: #6366f1;
+    --bg-light: #f8f9fa;
+    --bg-dark: #121212;
+    --text-light: #343a40;
+    --text-dark: #ffffff;
+    --border-light: #dee2e6;
+    --border-dark: #343a40;
+    --theme: light;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    font-family: 'Arial', sans-serif;
+}
+
+.app {
+    background: var(--app-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    width: 320px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.timer-display {
+    margin: 40px 0;
+    position: relative;
+}
+
+#timer {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    letter-spacing: -0.05em;
+}
+
+#timer-type {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+button {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#start-btn {
+    background: var(--primary);
+    color: white;
+}
+
+#pause-btn {
+    background: #f0ad4e;
+    color: white;
+}
+
+#reset-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.settings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0 30px;
+}
+
+input {
+    padding: 12px 16px;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    width: 80px;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.theme-switch {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .app {
+        width: 90%;
+        padding: 30px;
+    }
+    
+    #timer {
+        font-size: 5rem;
+    }
+}
+/* Обновим корневые переменные */
+:root {
+    --primary: #6366f1;
+    --bg-light: #f8f9fa;
+    --bg-dark: #121212;
+    --text-light: #343a40;
+    --text-dark: #ffffff;
+    --border-light: #dee2e6;
+    --border-dark: #343a40;
+    --theme: light;
+    
+    /* Новые переменные для фона */
+    --body-bg-light: #f8f9fa;
+    --body-bg-dark: #121212;
+}
+
+/* Обновим стили для тела документа */
+body {
+    background: var(--body-bg);
+    color: var(--text-color);
+}
+
+/* Классы для переключения тем */
+.theme-light {
+    --app-bg: var(--bg-light);
+    --text-color: var(--text-light);
+    --border-color: var(--border-light);
+    --body-bg: var(--body-bg-light);
+}
+
+.theme-dark {
+    --app-bg: var(--bg-dark);
+    --text-color: var(--text-dark);
+    --border-color: var(--border-dark);
+    --body-bg: var(--body-bg-dark);
+}
+
+/* Уберем градиент из body, будем использовать просто цвет */
+body {
+    background: var(--body-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+/*счетчик помиоров*/
+.pomodoro-counter {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+#pomodoros-count {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Добавим переменные для градиентов */
+:root {
+    --work-gradient: linear-gradient(135deg, #6366f1 0%, #33ccff 100%); /* фиолетово-синий */
+    --break-gradient: linear-gradient(135deg, #34c75a 0%, #f7dc6f 100%); /* зелено-желтый */
+    --default-bg: var(--app-bg);
+}
+
+.app {
+    background: var(--default-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    width: 320px;
+    text-align: center;
+    transition: background 0.5s ease;
+}
+
+/* Добавим классы для градиентов */
+.work-mode {
+    background: var(--work-gradient) !important;
+}
+
+.break-mode {
+    background: var(--break-gradient) !important;
+}
+/* Увеличиваем ширину контейнера таймера */
+.timer-container {
+    width: 360px; /* увеличиваем с 320px до 360px */
+    padding: 20px;
+    box-sizing: border-box; /* чтобы padding не увеличивал общую ширину */
+}
+
+/* Дополнительно можно настроить отступы для кнопок */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px 0;
+    padding: 0 20px; /* добавляем внутренние отступы */
+}
+
+/* Настраиваем поведение кнопок */
+button {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex: 1 1 auto; /* делаем кнопки адаптивными */
+    max-width: 33%; /* ограничиваем максимальную ширину */
+}
+@media (max-width: 600px) {
+    .timer-container {
+        width: 90%; /* делаем адаптивным */
+    }
+}
+/* Изменим стиль для #timer-type */
+#timer-type {
+    font-size: 1.8rem;
+    /* Добавим контрастный цвет текста */
+    color: #333333; /* Темно-серый цвет */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    opacity: 1; /* Уберем прозрачность */
+    /* Добавим тень для лучшей читаемости */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Добавим стиль для счетчика помидоров */
+.pomodoro-counter {
+    font-size: 1.6rem;
+    /* Контрастный цвет текста */
+    color: #333333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#pomodoros-count {
+    font-size: 2rem;
+    font-weight: 700;
+    /* Добавим тень для лучшей читаемости */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Дополнительно можно добавить адаптивные стили */
+@media (prefers-color-scheme: dark) {
+    #timer-type,
+    .pomodoro-counter {
+        color: #ffffff; /* Белый цвет для темной темы */
+    }
+}
+/* Убираем градиент из .app */
+.app {
+    background: transparent; /* делаем контейнер прозрачным */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    width: 320px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Добавляем градиенты для body */
+:root {
+    --work-gradient: linear-gradient(135deg, #6366f1 0%, #33ccff 100%);
+    --break-gradient: linear-gradient(135deg, #34c75a 0%, #f7dc6f 100%);
+    --current-gradient: var(--work-gradient);
+}
+
+body {
+    background: var(--current-gradient);
+    background-size: 400% 400%;
+    transition: background 1s ease;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Добавим новые переменные для темных градиентов*/
+
+:root {
+    /* Существующие градиенты */
+    --work-gradient: linear-gradient(135deg, #6366f1 0%, #33ccff 100%);
+    --break-gradient: linear-gradient(135deg, #34c75a 0%, #f7dc6f 100%);
+
+    /* Темные версии градиентов */
+    --work-gradient-dark: linear-gradient(135deg, #373e6f 0%, #1b6cff 100%);
+    --break-gradient-dark: linear-gradient(135deg, #15432f 0%, #b57818 100%);
+    
+    --current-gradient: var(--work-gradient);
+}
+
+/*адаптируем стили .app для применения градиента*/
+.app {
+    background: var(--current-gradient);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    width: 320px;
+    text-align: center;
+    transition: background 0.5s ease;
+}
+:root {
+    --work-gradient: linear-gradient(135deg, #6366f1 0%, #33ccff 100%);
+    --break-gradient: linear-gradient(135deg, #34c75a 0%, #f7dc6f 100%);
+    
+    --work-gradient-dark: linear-gradient(135deg, #373e6f 0%, #1b6cff 100%);
+    --break-gradient-dark: linear-gradient(135deg, #15432f 0%, #b57818 100%);
+    
+    --current-gradient: var(--work-gradient);
+}
+/*счетчик помидоров*/
+#pomodoro-counter {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+:root {
+    --work-gradient: linear-gradient(135deg, #6366f1 0%, #33ccff 100%); /* рабочий градиент */
+    --break-gradient: linear-gradient(135deg, #34c75a 0%, #f7dc6f 100%); /* градиент перерыва */
+    --current-gradient: var(--work-gradient);
+}
+
+.app {
+    background: var(--current-gradient);
+    background-size: 400% 400%;
+    transition: background 0.5s ease;
+}
+
+.app {
+    position: relative; /* добавляем позиционирование */
+    /* остальные стили */
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.sound-selector {
+    display: flex;
+    align-items: center;
+}
+
+.sound-selector label {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+#sound-select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+.app {
+  position: relative; /* Позволяем позиционировать дочерние элементы */
+  /* Остальные стили... */
+}
+
+.header {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Отступ от правого края */
+  z-index: 10; /* Убеждаемся, что перекрывает другие элементы */
+}
+
+.sound-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Расстояние между лейблом и селектом */
+  background-color: var(--app-bg); /* Совмещаем с фоном приложения */
+  border-radius: 8px;
+  padding: 5px 10px; /* Внутренние отступы */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Лёгкая тень */
+}
+
+.sound-selector label {
+  font-size: 0.8rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+#sound-select {
+  padding: 5px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: white; /* Или другой цвет по дизайну */
+  cursor: pointer;
+}
+/*фоно
+/* Добавляем новые переменные для зеленого фона */
+:root {
+    --green-light: #ccffcc; /* Светлый зеленый для светлой темы */
+    --green-dark: #336633;   /* Тёмный зеленый для тёмной темы */
+}
+
+/* Добавляем класс для зеленого фона */
+.app.break-mode {
+    background: var(--green-light);
+}
+
+/* Для тёмной темы */
+.app.dark-theme.break-mode {
+    background: var(--green-dark);
+}
+/*стили для верхнего меню*/
+/* Стили для верхней панели */
+.header-nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #7B68EE;
+}
+
+/* Стили для основной карточки остаются прежними */
+.main-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+/*----------------------------раздел инфо------стили------нач----------------------*/
+
+.info-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.info-container h2 {
+    margin: 30px 0 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-container p {
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+.info-container ul, .info-container ol {
+    padding-left: 20px;
+}
+
+
+/*----------------------------раздел инфо------стили---------кон------------------*/
+/* Стили для водяного знака */
+#watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 999;
+    opacity: 0.2; /* Полупрозрачность */
+    color: #333; /* Цвет текста */
+    font-size: 14px;
+    text-align: right;
+}
+
+/* Опциональные стили для защиты от выделения */
+.main-content {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+/*адаптируем
+/* Основные медиа-запросы для адаптивности */
+
+@media (max-width: 1200px) {
+    .app {
+        width: 80%;
+        padding: 30px;
+    }
+    
+    #timer {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-nav {
+        padding: 10px 0;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .info-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .app {
+        width: 90%;
+        padding: 25px;
+    }
+    
+    #timer {
+        font-size: 4.5rem;
+    }
+    
+    .controls button {
+        padding: 14px 24px;
+        font-size: 1.1rem;
+    }
+    
+    .sound-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .app {
+        padding: 20px;
+    }
+    
+    #timer {
+        font-size: 4rem;
+    }
+    
+    .controls button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .header {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app {
+        padding: 15px;
+    }
+    
+    #timer {
+        font-size: 3.5rem;
+    }
+    
+    .controls button {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .info-container h2 {
+        margin: 20px 0 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .app {
+        padding: 10px;
+    }
+    
+    #timer {
+        font-size: 3rem;
+    }
+    
+    .controls button {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 320px) {
+    .app {
+        width: 100%;
+        padding: 8px;
+    }
+    
+    #timer {
+        font-size: 2.5rem;
+    }
+    
+    .controls button {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+    
+    .sound-selector label {
+        font-size: 0.7rem;
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 280px) {
+    .app {
+        padding: 5px;
+    }
+    
+    #timer {
+        font-size: 2rem;
+    }
+    
+    .controls button {
+        padding: 4px 8px;
+        font-size: 0.6rem;
+    }
+}
+
+/* Адаптация для печати */
+@media print {
+    .header,
+    .sound-selector {
+        display: none;
+    }
+    
+    .app {
+        background: transparent;
+        box-shadow: none;
+    }
+    
+    body {
+        background: white;
+    }
+}
+
